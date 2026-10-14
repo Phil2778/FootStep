@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Footstep, découvrez des voyages qui vous ressemblent.">
+  <title>Footstep — Explore your world</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="logo">footstep<span>.</span></a>
+    <nav id="nav">
+      <a href="#destinations">Destinations</a>
+      <a href="#experiences">Expériences</a>
+      <a href="#concept">Notre concept</a>
+      <a href="#journal">Mon carnet <span id="favCount">0</span></a>
+    </nav>
+    <button id="menuBtn" class="menu-btn" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <span class="eyebrow">THE WORLD IS WAITING FOR YOU</span>
+        <h1>Every journey<br>begins <em>somewhere.</em></h1>
+        <p>Des destinations qui vous inspirent. Des aventures qui vous ressemblent.</p>
+        <div class="hero-actions">
+          <button class="btn btn-light" id="startQuiz">Démarrer mon aventure ↗</button>
+          <a href="#destinations" class="hero-link">Explorer librement ↗</a>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <span>EXPLORE YOUR WORLD</span>
+        <span>SCROLL TO DISCOVER ↓</span>
+      </div>
+    </section>
+
+    <section class="intro section reveal">
+      <div>
+        <span class="eyebrow">VOYAGER AUTREMENT</span>
+        <h2>Votre prochain voyage commence par <em>une envie.</em></h2>
+      </div>
+      <p>Footstep vous invite à explorer le monde autrement : à travers ses cultures, ses saveurs, ses histoires, ses paysages et les lieux qui ont marqué notre imaginaire.</p>
+    </section>
+
+    <section class="section destinations" id="destinations">
+      <div class="section-heading reveal">
+        <div>
+          <span class="eyebrow">THE COLLECTION</span>
+          <h2>Où partir <em>demain ?</em></h2>
+        </div>
+        <p>Des lieux iconiques aux découvertes plus confidentielles. Trouvez votre prochaine histoire.</p>
+      </div>
+
+      <div class="filters reveal">
+        <input type="search" id="search" placeholder="Rechercher une ville, un pays, une expérience..." aria-label="Rechercher">
+        <select id="themeFilter" aria-label="Catégorie">
+          <option value="all">Toutes les envies</option>
+          <option value="Culture">Culture</option>
+          <option value="Gastronomie">Gastronomie</option>
+          <option value="Relaxation">Relaxation</option>
+          <option value="Aventure">Aventure</option>
+        </select>
+        <select id="budgetFilter" aria-label="Budget">
+          <option value="all">Tous les budgets</option>
+          <option value="1">€ Accessible</option>
+          <option value="2">€€ Intermédiaire</option>
+          <option value="3">€€€ Premium</option>
+        </select>
+      </div>
+
+      <div class="cards" id="cards"></div>
+      <p id="noResults" class="empty" hidden>Aucune destination trouvée. Essayez d'autres filtres.</p>
+      <p class="catalogue-count" id="catalogueCount"></p>
+    </section>
+
+    <section class="experience-section" id="experiences">
+      <div class="section">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">GO BEYOND</span>
+            <h2>Plus qu'un voyage.<br><em>Une histoire à vivre.</em></h2>
+          </div>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card exp-culture reveal">
+            <span>01 / CULTURE</span>
+            <div>
+              <h3>Entrez dans l'histoire.</h3>
+              <p>Découvrez des lieux de tournage, des événements historiques et des endroits chargés de récits.</p>
+              <a href="#destinations" data-category="Culture">Explorer ↗</a>
+            </div>
+          </article>
+          <article class="experience-card exp-food reveal">
+            <span>02 / GASTRONOMIE</span>
+            <div>
+              <h3>Goûtez au monde.</h3>
+              <p>Des marchés traditionnels aux spécialités régionales, voyagez aussi avec vos papilles.</p>
+              <a href="#destinations" data-category="Gastronomie">Explorer ↗</a>
+            </div>
+          </article>
+          <article class="experience-card exp-adventure reveal">
+            <span>03 / AVENTURE</span>
+            <div>
+              <h3>Sortez des sentiers battus.</h3>
+              <p>Explorez des paysages extraordinaires et des expériences qui marquent une vie.</p>
+              <a href="#destinations" data-category="Aventure">Explorer ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journal-section" id="journal">
+      <div class="journal-copy reveal">
+        <span class="eyebrow">YOUR PERSONAL TRAVEL JOURNAL</span>
+        <h2>Les plus beaux voyages se construisent <em>pas à pas.</em></h2>
+        <p>Enregistrez vos destinations préférées et imaginez votre prochaine aventure. Votre carnet reste sauvegardé dans ce navigateur.</p>
+        <button class="btn btn-dark" id="openJournal">Ouvrir mon carnet ♡</button>
+      </div>
+      <div class="journal-visual reveal">
+        <div class="ticket">
+          <small>FOOTSTEP / TRAVEL JOURNAL</small>
+          <span class="ticket-star">✳</span>
+          <strong>Make memories,<br>not checklists.</strong>
+          <small>YOUR NEXT CHAPTER ↗</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section concept" id="concept">
+      <span class="eyebrow reveal">HOW IT WORKS</span>
+      <h2 class="reveal">Trois pas vers <em>l'ailleurs.</em></h2>
+      <div class="steps">
+        <article class="reveal"><b>01</b><h3>Imaginez</h3><p>Choisissez votre univers ou laissez-vous guider par notre questionnaire.</p></article>
+        <article class="reveal"><b>02</b><h3>Découvrez</h3><p>Explorez des destinations et leurs histoires, des plus célèbres aux plus inattendues.</p></article>
+        <article class="reveal"><b>03</b><h3>Composez</h3><p>Ajoutez vos coups de cœur à votre carnet pour préparer votre voyage.</p></article>
+      </div>
+    </section>
+
+    <section class="quote">
+      <span class="eyebrow">THE FOOTSTEP PHILOSOPHY</span>
+      <blockquote class="reveal">“It's not about how far you go. It's about what you discover along the way.”</blockquote>
+      <p>Notre vision du voyage — Footstep</p>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="reveal">
+        <span class="eyebrow">WHAT'S NEXT?</span>
+        <h2>Le monde n'attend <em>que vous.</em></h2>
+        <p>Footstep est un prototype évolutif imaginé pour rendre la découverte du monde plus personnelle, culturelle et immersive.</p>
+        <a href="#destinations" class="btn btn-dark">Repartir explorer ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <a href="#home" class="logo">footstep<span>.</span></a>
+      <p>Explore. Discover. Experience.</p>
+      <a href="#home">Retour en haut ↑</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Footstep — Prototype personnel.</span>
+      <span>Made for the curious.</span>
+    </div>
+  </footer>
+
+  <dialog id="detailDialog" class="modal">
+    <button class="modal-close" data-close="detailDialog" aria-label="Fermer">✕</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <dialog id="quizDialog" class="modal">
+    <button class="modal-close" data-close="quizDialog" aria-label="Fermer">✕</button>
+    <div id="quizContent"></div>
+  </dialog>
+
+  <dialog id="journalDialog" class="modal">
+    <button class="modal-close" data-close="journalDialog" aria-label="Fermer">✕</button>
+    <div id="journalContent"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
